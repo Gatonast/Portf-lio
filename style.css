@@ -6,7 +6,7 @@
 }
 
 html, body {
-  overflow-x: hidden; /* só se for absolutamente necessário */
+  overflow-x: hidden;
   font-family: "Montserrat", serif;
   background-color: #0f0f0f;
   scroll-behavior: smooth;
@@ -67,7 +67,6 @@ nav ul li a:hover {
   text-align: center;
   padding: 0 20px;
   transition: background-color 1s ease; 
-  scroll-snap-align: start;
 }
 
 .frase-impacto {
@@ -89,6 +88,9 @@ nav ul li a:hover {
   align-items: center;
   flex-flow: wrap;
   margin: 50px;
+  background-color: rgba(24, 24, 24, 0.336);
+  border-radius: 20px;
+  box-shadow: #0000007a 0px 0px 20px;
 }
 /* conteiner titulo */
 .containtitle
@@ -120,7 +122,7 @@ nav ul li a:hover {
 @keyframes typing2 {
   0% { width: 0; }
   50% { width: 100%; }
-  80% { width: 100%; } /* Mantém o texto visível por um tempo */
+  80% { width: 100%; }
 }
 
 @keyframes blink {
@@ -129,36 +131,74 @@ nav ul li a:hover {
 
 
 .titulo h2{
+  color: rgb(252, 176, 13);
+  text-shadow: 0 0 10px rgb(252, 176, 13);
   font-weight: 300;
   font-size: 40px;
   margin: 0 0 10px 0;
 }
 
 /* fecha conteiner */
+
+/* conteiner sobre */
+.container-sobre
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  padding: 20px;
+  margin: 50px auto; /* Centraliza horizontalmente */
+  width: 800px;
+  background-color: rgba(49, 49, 49, 0.336);
+  border-radius: 20px;
+  box-shadow: #0000007a 0px 0px 20px;
+}
 .sobre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: white;
   margin: 10px;
-  width: 500px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+    scroll-margin-top: 20vh;
 }
 
 .sobre h2 {
   margin: 10px;
   font-size: 40px;
+  color: rgb(252, 176, 13);
+  text-shadow: 0 0 10px rgb(252, 176, 13);
 }
-
 .sobre p {
   margin: 5px;
   font-size: 24px; 
 }
 
 .servicos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: white;
-  width: 500px;
+  margin: 0 0 30px 0;
+  height: 100%;
+  width: 40%;
+  text-align: center;
+    scroll-margin-top: 20vh;
 }
 
 .servicos h2 {
   margin: 10px;
   font-size: 40px;
+  color: rgb(252, 176, 13);
+  text-shadow: 0 0 10px rgb(252, 176, 13);
+  
 }
 
 .servicos p {
@@ -172,23 +212,28 @@ nav ul li a:hover {
 }
 
 .contato{
-  
   display: flex;
   align-items: center;
   flex-direction: column;
   color: white;
-  gap: 30px
+  gap: 30px;
+  width: 500px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgba(24, 24, 24, 0.336);
+  box-shadow: #0000007a 0px 0px 20px;
 }
 
 .contato h2 {
   font-size: 40px;
+  color: rgb(252, 176, 13);
+  text-shadow: 0 0 10px rgb(252, 176, 13);
 }
 
 .image {
   width: 25%;
   min-width: 500px;
   position: relative;
-  top: 50px;
   animation: subirEdescerContinuo 2s infinite alternate linear;
 }
 
@@ -249,8 +294,13 @@ nav ul li a:hover {
   align-items: center;
   color: white;
   padding: 20px;
+  
 }
-
+.container-p h1 {
+  font-size: 40px;
+  color: rgb(252, 176, 13);
+  text-shadow: 0 0 10px rgb(252, 176, 13);
+}
 .projetos {
   display: flex;
   justify-content: center;
@@ -260,6 +310,9 @@ nav ul li a:hover {
   padding: 20px;
   flex-wrap: wrap;
   width: 100%;
+  border-radius: 20px;
+  background-color: rgba(24, 24, 24, 0.336);
+  box-shadow: #0000007a 0px 0px 20px;
 }
 
 .projeto{
@@ -268,6 +321,7 @@ nav ul li a:hover {
   position: relative;   
   box-shadow: #000000 0px 0px 10px;
   border-radius: 200px;
+  clip-path: inset(0 round 22px)
   
 }
 
@@ -275,7 +329,6 @@ nav ul li a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  
   transition: transform 0.3s;
   clip-path: inset(0 round 22px)
 }	

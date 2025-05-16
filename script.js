@@ -15,7 +15,6 @@ function digitar() {
   const frase = frases[fraseIndex];
   let textoAtual = elemento.textContent;
 
-  // Decide se deve errar
   if (!isDeleting && !erroFeito && Math.random() < 0.05 && charIndex > 2) {
     const letraErrada = String.fromCharCode(97 + Math.floor(Math.random() * 26));
     elemento.textContent += letraErrada;
@@ -46,8 +45,6 @@ function digitar() {
       fraseIndex = (fraseIndex + 1) % frases.length;
     }
   }
-
-  // Velocidade com mais ritmo realista
   const delay = isDeleting
     ? Math.random() * 40 + 20
     : Math.random() * 80 + 30;
@@ -58,7 +55,6 @@ function digitar() {
 
 document.addEventListener("DOMContentLoaded", digitar);
 
-// Mostrar header e mudar cor de fundo ao rolar
 window.addEventListener("scroll", () => {
   const hero = document.querySelector(".hero");
   const header = document.querySelector("header");
