@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* só se for absolutamente necessário */
+  font-family: "Montserrat", serif;
+  background-color: #0f0f0f;
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 10px 20px;
+  width: 100%;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease;
+  z-index: 1000;
+}
+
+header.show {
+  transform: translateY(0);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background: #555;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0f0f0f;
+  text-align: center;
+  padding: 0 20px;
+  transition: background-color 1s ease; 
+  scroll-snap-align: start;
+}
+
+.frase-impacto {
+  font-size: 32px;
+  color: white;
+  font-weight: 300;
+  max-width: 800px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+  margin: 50px;
+}
+/* conteiner titulo */
+.containtitle
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 0 0 20px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300; 
+}
+
+.titulo { 
+  display: flex;
+  flex-direction: column;
+}
+
+
+.titulo h1 {
+  font-weight: 100;
+  font-size: 80px;
+  border-right: 1px solid white;
+  animation: typing2  infinite, blink 0.7s infinite;
+}
+
+@keyframes typing2 {
+  0% { width: 0; }
+  50% { width: 100%; }
+  80% { width: 100%; } /* Mantém o texto visível por um tempo */
+}
+
+@keyframes blink {
+  30% { border-color: transparent; }
+}
+
+
+.titulo h2{
+  font-weight: 300;
+  font-size: 40px;
+  margin: 0 0 10px 0;
+}
+
+/* fecha conteiner */
+.sobre{
+  color: white;
+  margin: 10px;
+  width: 500px;
+}
+
+.sobre h2 {
+  margin: 10px;
+  font-size: 40px;
+}
+
+.sobre p {
+  margin: 5px;
+  font-size: 24px; 
+}
+
+.servicos{
+  color: white;
+  width: 500px;
+}
+
+.servicos h2 {
+  margin: 10px;
+  font-size: 40px;
+}
+
+.servicos p {
+  margin: 5px;
+  font-size: 24px;
+}
+
+.servicos a{
+  color: white;
+  font-weight: 500;
+}
+
+.contato{
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 30px
+}
+
+.contato h2 {
+  font-size: 40px;
+}
+
+.image {
+  width: 25%;
+  min-width: 500px;
+  position: relative;
+  top: 50px;
+  animation: subirEdescerContinuo 2s infinite alternate linear;
+}
+
+@keyframes subirEdescerContinuo {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.image img {
+  width: 100%;
+}
+
+.btn {
+  padding: 20px 30px;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+  transition: background 0.3s;
+  cursor: pointer;
+  width: 100%;
+  background-color: #00000000;
+  border: #ffffff;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.btn:hover {
+  background: #555;
+}
+
+.baixar {
+  padding: 20px 30px;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: background 0.3s;
+  width: 100%;
+  background-color: #ffffff00;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.baixar:hover {
+  background: #555;
+}
+
+.container-p
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.projetos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.projeto{
+  width: 500px;
+  height: 500px;
+  position: relative;   
+  box-shadow: #000000 0px 0px 10px;
+  border-radius: 200px;
+  
+}
+
+.projeto video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  
+  transition: transform 0.3s;
+  clip-path: inset(0 round 22px)
+}	
+
+.projeto:hover video{
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  clip-path: inset(0 round 22px);
+  opacity: 1;
+  transition: transform 0.3s, opacity 0.3s;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h2 {
+  font-size: 30px;
+}
+
+.overlay:hover {
+  transform: scale(1.1);
+  opacity: 0;
+  cursor: pointer;
+}
+
+.redes-sociais {
+  display: flex;
+  gap: 20px;
+}
+
+.scroll-animation {
+  opacity: 1; /* Antes era 0 */
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-animation.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+footer a{
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media (max-width: 480px) {
+  
+    .image {
+      min-width: 100%;
+    }
+  
+}
