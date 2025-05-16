@@ -87,7 +87,9 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   flex-flow: wrap;
-  margin: 50px;
+  margin: 0 auto;
+  height: 80vh;
+  width: 80%;
   background-color: rgba(24, 24, 24, 0.336);
   border-radius: 20px;
   box-shadow: #0000007a 0px 0px 20px;
@@ -187,7 +189,7 @@ nav ul li a:hover {
   flex-direction: column;
   color: white;
   margin: 0 0 30px 0;
-  height: 100%;
+  height: 100%; 
   width: 40%;
   text-align: center;
     scroll-margin-top: 20vh;
@@ -235,6 +237,10 @@ nav ul li a:hover {
   min-width: 500px;
   position: relative;
   animation: subirEdescerContinuo 2s infinite alternate linear;
+   margin: auto 0;
+   justify-content: center;
+    display: flex
+;
 }
 
 @keyframes subirEdescerContinuo {
@@ -247,7 +253,8 @@ nav ul li a:hover {
 }
 
 .image img {
-  width: 100%;
+  width: 90%;
+ margin: auto 0;
 }
 
 .btn {
@@ -392,10 +399,37 @@ footer a{
   text-decoration: none;
 }
 
-@media (max-width: 480px) {
-  
-    .image {
-      min-width: 100%;
-    }
-  
+@media (max-width: 1277px) {
+  .container {
+    width: 90%;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 800px) {
+  .image img{
+    width: 90%;
+  }
+  .container {
+    width: 90%;
+    height: 100vh;
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    width: 90%;
+    height: 100vh;
+  }
+  .image img{
+    width: 70%;
+  }
+  .container-sobre {
+    width: 90%;
+    height: auto;
+  }
+  .contato {
+    width: 90%;
+    height: auto;
+  }
 }
