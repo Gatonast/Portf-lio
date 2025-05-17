@@ -8,40 +8,21 @@
 </head>
 <body>
   <header>
- 
     <div class="logo">Erick Vinicius</div>
-    <nav class="item-lateral">
-      <i class="bi bi-list"></i>
-
-    <ul>
-        <li class="item-menu">
-          <a href="#">
-              <span class="icon"></span>
-              <span class="txt-link"></span>
-         </a>
-      </li>      <li class="item-menu">
-          <a href="#">
-              <span class="icon"></span>
-              <span class="txt-link"></span>
-         </a>
-      </li>      <li class="item-menu">
-          <a href="#">
-              <span class="icon"></span>
-              <span class="txt-link"></span>
-         </a>
-      </li>      <li class="item-menu">
-          <a href="#">
-              <span class="icon"></span>
-              <span class="txt-link"></span>
-         </a>
-      </li>
-    </ul>
-</nav>
-
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+    <nav class="item-lateral" id="sideNav">
+      <ul>
+        <li class="item-menu"><a href="#home"><span class="icon"></span><span class="txt-link">Home</span></a></li>
+        <li class="item-menu"><a href="#sobre"><span class="icon"></span><span class="txt-link">Sobre</span></a></li>
+        <li class="item-menu"><a href="#servicos"><span class="icon"></span><span class="txt-link">Serviços</span></a></li>
+        <li class="item-menu"><a href="#contato"><span class="icon"></span><span class="txt-link">Contato</span></a></li>
+      </ul>
+    </nav>
   </header>
   <section class="hero">
     <h1 class="frase-impacto">Onde termina o caos, começa a criação.</h1>
   </section>
+  <a href="#home" class="seta" aria-label="Ir para Home">⬇️</a>
   
 <!-- Container geral -->
   <section class="container"  id="home" > 
@@ -64,12 +45,9 @@
  <div class="sobre" id="sobre">
     <h2>Sobre</h2>
     <p>
-      Olá, meu nome é Erick Vinicius, sou desenvolvedor web apaixonado por tecnologia e inovação.<br><br>
-      Minha jornada na área de desenvolvimento começou há 6 meses, quando decidi mergulhar de cabeça no universo da programação. Desde então, venho me dedicando diariamente ao estudo e à prática de diversas tecnologias.<br><br>
-      Atualmente, estou focado em aprender e aprimorar meus conhecimentos em HTML, CSS, JavaScript. Busco sempre acompanhar as tendências do mercado e participar de projetos e desafios que me permitam evoluir tanto tecnicamente quanto pessoalmente.<br><br>
-      Ao longo desse tempo, tive a oportunidade de desenvolver projetos próprios e colaborar com outros profissionais, o que me proporcionou uma visão mais ampla sobre as necessidades dos clientes e a importância de entregar soluções eficientes e criativas.<br><br>
-      Meu objetivo é continuar crescendo na área, enfrentando novos desafios e contribuindo para o sucesso de cada projeto em que me envolvo. Estou sempre aberto a aprender, compartilhar conhecimento e construir uma carreira sólida como desenvolvedor web.
-    </p>
+      Olá, meu nome é Erick Vinicius, tenho 18 anos e sou desenvolvedor web apaixonado por tecnologia e inovação.<br><br>
+      Atualmente, estou focado em aprimorar meus conhecimentos em HTML, CSS, JavaScript. <br> <br> Busco uma área onde possa aplicar minhas habilidades e contribuir para o crescimento da equipe.<br><br>
+      </p>
   </div>
    </section>
   <div class="container-p"> <!-- Contaner de Projetos -->
@@ -116,12 +94,10 @@
   <div id="servicos" class="servicos">
     <h2>Serviços</h2>
     <p>
-      Ao longo da minha trajetória como desenvolvedor web, tive a oportunidade de criar e manter o site 
+      Criei e mantenho o site 
       <a href="https://dionisioprotetor.com.br" target="_blank">dionisioprotetor.com.br</a>, onde pude aplicar meus conhecimentos em desenvolvimento e garantir uma experiência de navegação eficiente para os usuários.<br><br>
-      Também desenvolvi projetos de formulários personalizados,buscando sempre soluções práticas e intuitivas para facilitar o dia a dia dos clientes.<br><br>
-      Além disso, participo ativamente de desafios no 
+           Além disso, participo ativamente de desafios no 
       <a href="https://www.frontendmentor.io" target="_blank">Frontend Mentor</a>, uma plataforma que me permite aprimorar minhas habilidades, aprender novas técnicas e me manter atualizado com as tendências do mercado.<br><br>
-      Estou sempre em busca de novos desafios e oportunidades para crescer profissionalmente, entregando resultados de qualidade e inovando em cada projeto.
     </p>
 </div>
   <div id="contato" class="contato">
@@ -142,6 +118,29 @@
     </a>
     </div>
     <script src="script.js"></script>
+  <script>
+  const menuToggle = document.getElementById('menuToggle');
+  const sideNav = document.getElementById('sideNav');
+
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    sideNav.classList.toggle('open');
+  });
+
+  // Fecha o menu ao clicar fora dele
+  document.addEventListener('click', function(e) {
+    if (sideNav.classList.contains('open') && !sideNav.contains(e.target) && e.target !== menuToggle) {
+      sideNav.classList.remove('open');
+    }
+  });
+
+  // Fecha ao clicar em um link do menu
+  document.querySelectorAll('.item-lateral a').forEach(link => {
+    link.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+    });
+  });
+</script>
   <footer>
     <p>Desenvolvido por <a href="">Erick Vinicius</a></p>
   </footer> 
