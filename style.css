@@ -64,7 +64,7 @@ nav ul li a:hover {
   justify-content: center;
   align-items: center;
   background-color: #0f0f0f;
-  text-align: center;
+  text-align: center; 
   padding: 0 20px;
   transition: background-color 1s ease; 
 }
@@ -74,7 +74,6 @@ nav ul li a:hover {
   color: white;
   font-weight: 300;
   max-width: 800px;
-  white-space: nowrap;
   overflow: hidden;
   padding-right: 5px;
   font-family: 'Montserrat', sans-serif;
@@ -118,13 +117,15 @@ nav ul li a:hover {
   font-weight: 100;
   font-size: 80px;
   border-right: 1px solid white;
-  animation: typing2  infinite, blink 0.7s infinite;
+  animation: typing2 1s, blink 0.4s infinite;
 }
 
 @keyframes typing2 {
+  0% { color: transparent; }
+  60% { color: white; }
+  100% { color: white; }
   0% { width: 0; }
-  50% { width: 100%; }
-  80% { width: 100%; }
+  100% { width: 100%; }
 }
 
 @keyframes blink {
@@ -405,6 +406,23 @@ footer a{
     height: 100vh;
   }
 }
+@media (max-width: 815px) {
+  .image img{
+    width: 90%;
+  }
+  .container-sobre {
+    width: 90%;
+  }
+}
+
+@media (max-width: 815px) {
+  .image img{
+    width: 90%;
+  }
+  .container-sobre {
+    width: 90%;
+  }
+}
 
 @media (max-width: 800px) {
   .image img{
@@ -431,5 +449,14 @@ footer a{
   .contato {
     width: 90%;
     height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .image img{
+    width: 35%;
+  }
+  .container-sobre {
+    width: 90%;
   }
 }
